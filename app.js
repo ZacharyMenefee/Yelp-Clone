@@ -4,10 +4,10 @@ const mongoose = require('mongoose');
 const catchAsync = require('./utils/catchAsync');
 const ExpressError = require('./utils/ExpressError');
 const methodOverride = require('method-override');
-const { campgroundSchema } = require('./schemas.js');
+const { campgroundSchema, reviewSchema } = require('./schemas.js');
 const ejsMate = require('ejs-mate');
 const Campground = require('./models/campground');
-const Review = require('./models/reviews');
+const Review = require('./models/review');
 
 mongoose.connect('mongodb://localhost:27017/yelp-camp');
 
@@ -68,12 +68,12 @@ app.post('/campgrounds', validateCampground, catchAsync(async (req, res, next) =
 }))
 
 app.get('/campgrounds/:id', catchAsync(async (req, res,) => {
-    const campground = await Campground.findById(req.params.id)
+    const campground = await Campground.findById(req.params.id).populate('reviews')
     res.render('campgrounds/show', { campground });
 }));
 
 app.get('/campgrounds/:id/edit', catchAsync(async (req, res) => {
-    const campground = await Campground.findById(req.params.id).populate('reviews');
+    const campground = await Campground.findById(req.params.id)
     res.render('campgrounds/edit', { campground });
 }))
 
