@@ -24,6 +24,7 @@
     "flash": "^1.1.0",
     "helmet": "^5.0.2",
     "joi": "^17.6.0",
+    "mapbox-gl": "^2.7.0",
     "method-override": "^3.0.0",
     "mongoose": "^6.2.1",
     "multer": "^1.4.4",
