@@ -11,7 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@mapbox/mapbox-sdk": "^0.13.2",
+    "@mapbox/mapbox-sdk": "^0.11.0",
     "cloudinary": "^1.28.1",
     "connect-flash": "^0.1.1",
     "connect-mongo": "^3.1.2",
@@ -22,7 +22,7 @@
     "express-mongo-sanitize": "^2.2.0",
     "express-session": "^1.17.2",
     "flash": "^1.1.0",
-    "helmet": "^5.0.2",
+    "helmet": "^4.1.1",
     "joi": "^17.6.0",
     "mapbox-gl": "^2.7.0",
     "method-override": "^3.0.0",
